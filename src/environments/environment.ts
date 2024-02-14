@@ -7,4 +7,5 @@ export const environment = {
         "authDomain":"angularauth-67baf.firebaseapp.com",
         "messagingSenderId":"865768004195"
     },
+    apiBaseUrl: 'https://fakestoreapi.com',
   };

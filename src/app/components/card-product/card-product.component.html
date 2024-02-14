@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+<mat-card-header>
+    <mat-card-title>{{product?.title | truncate:25}}</mat-card-title>
+    <mat-card-subtitle class="actions-card">
+        {{product?.category}}
+        <h3>{{product?.rating?.rate}}<mat-icon class="yellow-icon">star</mat-icon></h3>
+    </mat-card-subtitle>
+</mat-card-header>
+<img mat-card-image class="product-image" [src]="product?.image" [alt]="product?.title">
+<mat-card-content>
+    <p>{{product?.description | truncate:100 }}</p>
+</mat-card-content>
+<mat-card-actions class="actions-card">
+    <button mat-fab extended color="primary">
+        <mat-icon>add_shopping_cart</mat-icon>
+        Add to Cart
+      </button>
+    <button mat-fab matTooltip="Add to Favorites" color="accent" aria-label="Example mini fab with a heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+</mat-card-actions>
+</mat-card>
