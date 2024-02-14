@@ -3,8 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
 
 ## Tools and libraries used
-    - FIREBASE AUTH (Google, Github, Facebook, LinkedIn)
-    - PrimeNG and CSS3
+    - FIREBASE AUTH (Google, Github)
+    - Angular Material and CSS3
     - Articles API (https://fakestoreapi.com/)
     - PAYPAL API for the payment section (SANDBOX)
 
