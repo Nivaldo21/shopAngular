@@ -8,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
 import { Router } from '@angular/router';
 import {MatDividerModule} from '@angular/material/divider';
+import { CartServiceService } from '../../services/cart-service.service';
 
 
 @Component({
@@ -19,11 +20,14 @@ import {MatDividerModule} from '@angular/material/divider';
 })
 export class NavbarComponent {
 
-  constructor(private router: Router){}
+  itemsNumbers:number = 0;
+  options:string[] = ['','/log-in','/sign-up','/','/cart'];
+
+  constructor(private router: Router, private cartService:CartServiceService){
+    this.cartService.cartList$.subscribe(cart => this.itemsNumbers = cart.length);
+  }
 
   navigation(option:number = 0): void{
-    if (option==1) this.router.navigateByUrl('/log-in') 
-    if (option==2) this.router.navigateByUrl('/sign-up')
-    if (option==3) this.router.navigateByUrl('/')
+    this.router.navigateByUrl(this.options[option]);
   }
 }

@@ -7,8 +7,12 @@
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>favorite</mat-icon>
         </button>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+        <button mat-icon-button class="example-icon favorite-icon" (click)="navigation(4)" aria-label="Example icon-button with heart icon">
+            @if (this.itemsNumbers > 0) {
+                <mat-icon [matBadge]="this.itemsNumbers" matBadgeColor="warn">shopping_cart</mat-icon>
+            }@else {
+                <mat-icon>shopping_cart</mat-icon>
+            }
         </button>
     </div>
 </mat-toolbar>
