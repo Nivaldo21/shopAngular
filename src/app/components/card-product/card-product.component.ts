@@ -5,6 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import Product from '../../interfaces/product.interface';
 import { TruncatePipe } from '../../pipes/truncate.pipe';
+import { CartServiceService } from '../../services/cart-service.service';
 
 @Component({
   selector: 'app-card-product',
@@ -17,5 +18,9 @@ import { TruncatePipe } from '../../pipes/truncate.pipe';
 export class CardProductComponent {
   @Input() product: Product | undefined;
 
-
+  constructor(private cartservice:CartServiceService){}
+  
+  addItemToCart(product:Product): void{
+    this.cartservice.addToCart(product);
+  }
 }

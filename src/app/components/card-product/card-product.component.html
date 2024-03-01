@@ -11,7 +11,7 @@
     <p>{{product?.description | truncate:100 }}</p>
 </mat-card-content>
 <mat-card-actions class="actions-card">
-    <button mat-fab extended color="primary">
+    <button mat-fab extended color="primary" (click)="addItemToCart(product!)">
         <mat-icon>add_shopping_cart</mat-icon>
         Add to Cart
       </button>
