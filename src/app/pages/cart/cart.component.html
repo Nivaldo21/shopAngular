@@ -1,1 +1,18 @@
-<p>cart works!</p>
+<div style="margin: 100px;">
+    <mat-list>  
+        @for (item of cartItems; track $index) {
+            <mat-list-item>
+                <mat-icon matListItemIcon>shopping_basket</mat-icon>
+                <div matListItemTitle>{{item.title}}</div>
+                <div matListItemLine>{{item.price | currency}}</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        }
+        @empty {
+        <div class="cart-empty">
+                <h1>Your Cart is Empty 🔍</h1>
+                <img src="assets/empty_cart.svg" width="400px" height="400px">
+            </div>
+        }
+    </mat-list>
+</div>
