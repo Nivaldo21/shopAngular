@@ -18,8 +18,15 @@
 }
 
 mat-card-content p{
-    padding: 15px 0;
+    padding: 15px 0 0 0;
     font-size:medium;
+}
+mat-card-content span{
+    display: flex;
+    justify-content: center;
+    font-size:x-large;
+    font-weight: bold;
+    margin: 5px;
 }
 
 mat-card-header{
@@ -34,4 +41,9 @@ mat-card-header{
   .actions-card{
     display: flex;
     justify-content: space-between;
+  }
+  .buttons{
+    position: absolute;
+    bottom: 0;
+    width: 95%;
   }

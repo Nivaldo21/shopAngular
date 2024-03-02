@@ -6,11 +6,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import Product from '../../interfaces/product.interface';
 import { TruncatePipe } from '../../pipes/truncate.pipe';
 import { CartServiceService } from '../../services/cart-service.service';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-card-product',
   standalone: true,
-  imports: [MatButtonModule,MatCardModule,MatTooltipModule,MatIconModule,TruncatePipe],
+  imports: [MatButtonModule,MatCardModule,MatTooltipModule,MatIconModule,TruncatePipe,CurrencyPipe],
   templateUrl: './card-product.component.html',
   styleUrl: './card-product.component.css'
 })
