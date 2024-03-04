@@ -18,10 +18,17 @@ import { CurrencyPipe } from '@angular/common';
 
 export class CardProductComponent {
   @Input() product: Product | undefined;
+  @Input() selected:boolean = false;
 
   constructor(private cartservice:CartServiceService){}
   
   addItemToCart(product:Product): void{
+    this.selected = true;
     this.cartservice.addToCart(product);
+  }
+
+  deletetemToCart(product:Product):void{
+    this.selected = false;
+    this.cartservice.removeToCart(product);
   }
 }
