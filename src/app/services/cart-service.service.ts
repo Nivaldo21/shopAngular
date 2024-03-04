@@ -22,5 +22,10 @@ export class CartServiceService {
     this._snackBar.open("New Item in your Cart ✅ ",'',{duration: 5000});
   }
 
+  removeToCart(product: Product): void {
+    const updatedCartList = this._cartList.value.filter((objeto) => objeto.id !== product.id);
+    this._cartList.next(updatedCartList);
+    this._snackBar.open("Item Removed of your Cart ❌ ",'',{duration: 5000});
+  }
 
 }
