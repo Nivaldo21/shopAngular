@@ -1,6 +1,6 @@
 <div class="products-div">
     @for (product of products; track product.id) {
-        <app-card-product [product]="product" ></app-card-product>
+        <app-card-product [selected]="false" [product]="product" ></app-card-product>
     }@empty {
       <h1> There are no items. </h1>
     }
