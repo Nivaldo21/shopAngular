@@ -1,13 +1,13 @@
 <mat-toolbar color="primary" class="navbar">
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon">
         <mat-icon>menu</mat-icon>
     </button>
     <span>Shop A17</span>
     <div>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <button mat-icon-button class="example-icon favorite-icon">
             <mat-icon>favorite</mat-icon>
         </button>
-        <button mat-icon-button class="example-icon favorite-icon" (click)="navigation(4)" aria-label="Example icon-button with heart icon">
+        <button mat-icon-button class="example-icon favorite-icon" (click)="navigation(4)">
             @if (this.itemsNumbers > 0) {
                 <mat-icon [matBadge]="this.itemsNumbers" matBadgeColor="warn">shopping_cart</mat-icon>
             }@else {
