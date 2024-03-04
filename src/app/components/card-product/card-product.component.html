@@ -12,10 +12,17 @@
     <span>{{product?.price | currency }}</span>
 </mat-card-content>
 <mat-card-actions class="actions-card buttons">
-    <button mat-fab extended color="primary" (click)="addItemToCart(product!)">
-        <mat-icon>add_shopping_cart</mat-icon>
-        Add to Cart
-      </button>
+    @if (!selected) {
+        <button mat-fab extended color="primary" (click)="addItemToCart(product!)">
+            <mat-icon>add_shopping_cart</mat-icon>
+            Add to Cart
+        </button>
+    }@else {
+        <button mat-fab extended color="warn" (click)="deletetemToCart(product!)">
+            <mat-icon>remove_shopping_cart</mat-icon>
+            Remove to Cart
+        </button>
+    }
     <button mat-fab matTooltip="Add to Favorites" color="accent" aria-label="Example mini fab with a heart icon">
         <mat-icon>favorite</mat-icon>
     </button>
