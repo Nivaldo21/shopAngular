@@ -3,6 +3,7 @@ import { ApiProductsServiceService } from '../../services/api-products-service.s
 import { CardProductComponent } from '../../components/card-product/card-product.component';
 import Product from '../../interfaces/product.interface';
 import { CommonModule } from '@angular/common';
+import { CartServiceService } from '../../services/cart-service.service';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +13,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private productService: ApiProductsServiceService){}
+  constructor(private productService: ApiProductsServiceService, private cartService: CartServiceService){}
 
   products:Product[] = [];
 
   ngOnInit(): void {
+    this.cartService.cartList$.subscribe((resp:any)=>{
+      console.log("cart",resp);
+    })
+
     this.productService.getAllProducts().subscribe((resp:Product[])=>{
       this.products = resp;
     });
